@@ -1,0 +1,30 @@
+{
+  "name": "comics-read",
+  "version": "0.0.1",
+  "description": "漫画阅读（长图专用）",
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taoHC1997/comics-read.git"
+  },
+  "keywords": [
+    "comics"
+  ],
+  "author": "James Tao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taoHC1997/comics-read/issues"
+  },
+  "homepage": "https://github.com/taoHC1997/comics-read#readme",
+  "dependencies": {
+    "@koa/router": "^12.0.0",
+    "ejs": "^3.1.8",
+    "fs-extra": "^11.1.0",
+    "koa": "^2.14.1",
+    "koa-mount": "^4.0.0",
+    "koa-static": "^5.0.0",
+    "md5": "^2.3.0"
+  }
+}

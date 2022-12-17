@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    <%= dirName %>
+  </title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .comic_div {
+      max-width: 100%;
+      margin: 0 auto;
+      font-size: 0;
+      line-height: 0;
+    }
+
+    .comic_div img {
+      width: 100%;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -o-crisp-edges;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      -ms-interpolation-mode: nearest-neighbor;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>
+    <%= dirName %>
+  </h2>
+  <div class="comic_div">
+    <% imgs.forEach(item=>{ %>
+      <img src="<%= md5 + '/' + item %>" alt="<%= item %>">
+      <%})%>
+  </div>
+</body>
+
+</html>
