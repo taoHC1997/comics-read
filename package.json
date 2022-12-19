@@ -2,12 +2,19 @@
   "name": "comics-read",
   "version": "0.1.0",
   "description": "漫画阅读（长图专用）",
+  "bin": "./app.js",
   "scripts": {
-    "start": "node ./app.js"
+    "start": "node ./app.js",
+    "build": "pkg . -t node12-win-x64 --out-path=build/"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/taoHC1997/comics-read.git"
+  },
+  "pkg": {
+    "assets": [
+      "src/views/*.ejs"
+    ]
   },
   "keywords": [
     "comics"
@@ -26,5 +33,8 @@
     "koa-mount": "^4.0.0",
     "koa-static": "^5.0.0",
     "md5": "^2.3.0"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.0"
   }
 }

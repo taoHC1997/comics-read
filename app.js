@@ -11,6 +11,7 @@ const mount = require("koa-mount");
 const ComicFileData = require("./src/utils/comicFileData");
 const exec = require("child_process").exec;
 const ejs = require("ejs");
+const nodePath = require("path");
 
 const myComicFileData = new ComicFileData(path);
 
@@ -22,7 +23,10 @@ const router = new Router({
 app.use(mount("/" + myComicFileData.md5, serve(path)));
 
 router.all("/", async (ctx) => {
-  ctx.body = await ejs.renderFile("./src/views/index.ejs", myComicFileData);
+  ctx.body = await ejs.renderFile(
+    nodePath.join(__dirname, "./src/views/index.ejs"),
+    myComicFileData
+  );
 });
 
 app.use(router.routes());
@@ -30,6 +34,7 @@ app.use(router.routes());
 app.listen(port, () => {
   const url = `http://localhost:${port}/read`;
   // 这里仅针对 win 平台
+  console.log(`服务启动，url：`, url);
   exec("start " + url);
 });
 
