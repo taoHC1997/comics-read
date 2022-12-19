@@ -35,7 +35,7 @@ function getAllImage(path) {
       }
     });
   }
-  return result.sort();
+  return result.sort((a, b) => a.localeCompare(b, "zh-Hans-CN", { numeric: true }));
 }
 
 /**
